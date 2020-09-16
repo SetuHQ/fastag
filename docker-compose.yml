@@ -1,19 +1,6 @@
 version: "2"
 
 services:
-  gondolin-db:
-    image: postgres:11
-    container_name: "gondolin-db"
-    volumes:
-      - "gondolin_db:/var/lib/postgresql/data"
-    environment:
-      - POSTGRES_USER=gondolin
-      - POSTGRES_PASSWORD=gondolin
-      - POSTGRES_DB=gondolin
-    ports:
-      - "5432:5432"
-    network_mode: bridge
-
   gondolin-server:
     image: quay.io/setuinfra/gondolin:<tag>
     environment:
@@ -23,23 +10,7 @@ services:
       # Application config
       - APPLICATION_HOST=0.0.0.0
       - APPLICATION_PORT=3000
-      - APPLICATION_DB_CONTAINER=gondolin-db
       - LOG_IN_FILE=nope
-      # Database config
-      - PGHOST=gondolin-db
-      - PGPORT=5432
-      - PGUSER=gondolin
-      - PGPASSWORD=gondolin
-      - PGDATABASE=gondolin
     command: /app/server
     ports:
       - 3000:3000
-    network_mode: bridge
-    depends_on:
-      - gondolin-db
-    links:
-      - gondolin-db
-
-volumes:
-  gondolin_db:
-    external: true

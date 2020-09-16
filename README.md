@@ -8,11 +8,7 @@ gondolin
 - [Getting started](#getting-started)
 - [Developer Setup](#developer-setup)
   - [1. Fill in configuration in `docker-compose.yml`](#1-fill-in-configuration-in-docker-composeyml)
-  - [2. Create a docker volume](#2-create-a-docker-volume)
-  - [3. Bring up the setup](#3-bring-up-the-setup)
-- [Production Deployment](#production-deployment)
-  - [Using provided scripts](#using-provided-scripts)
-  - [Other possibilities](#other-possibilities)
+  - [2. Bring up the setup](#3-bring-up-the-setup)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -39,40 +35,10 @@ To bring up a local developer setup,
       - ALL_PROXY=http://<user>:<password>@<switch-server>.setu.co:<port>
 ```
 
-- Fill in desired database credentials
-
-```
-      - POSTGRES_USER=gondolin
-      - POSTGRES_PASSWORD=gondolin
-      - POSTGRES_DB=gondolin
-...
-      - PGUSER=gondolin
-      - PGPASSWORD=gondolin
-      - PGDATABASE=gondolin
-```
-
 - Fill other credentials as communicated.
 
-## 2. Create a docker volume
-
-Create a docker volume to store the postgresql database
-
-```bash
-docker volume create --name=gondolin_db
-```
-
-## 3. Bring up the setup
+## 2. Bring up the setup
 
 ```bash
 docker-compose up
 ```
-
-# Production Deployment
-
-## Using provided scripts
-
-TBD
-
-## Other possibilities
-
-TBD
