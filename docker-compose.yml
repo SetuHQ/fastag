@@ -11,6 +11,10 @@ services:
       - APPLICATION_HOST=0.0.0.0
       - APPLICATION_PORT=3000
       - LOG_IN_FILE=nope
+      # Axis config
+      - JWT_SCHEME_ID=<jwt-scheme-id>
+      - JWT_SECRET=<jwt-secret>
+      - END_POINT=<axis-endpoint>
     command: /app/server
     ports:
       - 3000:3000
