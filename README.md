@@ -33,6 +33,7 @@ To bring up a local developer setup,
       # Switch server credentials
       - HTTP_PROXY=http://<user>:<password>@<switch-server>.setu.co:<port>
       - ALL_PROXY=http://<user>:<password>@<switch-server>.setu.co:<port>
+      - END_POINT=<Fastag endpoint>
 ```
 
 - Fill other credentials as communicated.

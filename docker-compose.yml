@@ -3,6 +3,7 @@ version: "2"
 services:
   gondolin-server:
     image: quay.io/setuinfra/gondolin:<tag>
+    restart: always
     environment:
       # Switch server credentials
       - HTTP_PROXY=http://<user>:<password>@<switch-server>.setu.co:<port>
