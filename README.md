@@ -43,3 +43,16 @@ To bring up a local developer setup,
 ```bash
 docker-compose up
 ```
+
+# Docker Best practices
+
+1. Resource constraints: Configure memory and cpu resources when being run along with other docker containers.
+2. PID limits: Tune container pids limit.
+3. IPC Mode: Inter process communication mode. Set it to `private` when possible.
+
+## References
+```buildoutcfg
+https://docs.docker.com/compose/compose-file/compose-file-v2/
+https://docs.docker.com/engine/reference/run/  
+https://dev-sec.io/baselines/docker/
+```

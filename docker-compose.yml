@@ -3,7 +3,8 @@ version: "2"
 services:
   gondolin-server:
     image: quay.io/setuinfra/gondolin:<tag>
-    restart: always
+    #restart: on-failure:5
+    #mem_limit: 512m
     environment:
       # Switch server credentials
       - HTTP_PROXY=http://<user>:<password>@<switch-server>.setu.co:<port>
