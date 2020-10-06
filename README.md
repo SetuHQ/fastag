@@ -47,8 +47,10 @@ docker-compose up
 # Docker Best practices
 
 1. Resource constraints: Configure memory and cpu resources when being run along with other docker containers.
-2. PID limits: Tune container pids limit.
-3. IPC Mode: Inter process communication mode. Set it to `private` when possible.
+2. PID limits: Tune container pids limit. Ex: `--pid="100"`
+3. IPC Mode: Inter process communication mode. Set it to `private` when possible. Ex: `--ipc="private"` 
+4. Use `127.0.0.1` if possible for the docker host name instead of `0.0.0.0`.
+5. Disable container processes from gaining more privileges. Ex: `--security-opt="apparmor=PROFILE"` 
 
 ## References
 ```buildoutcfg
