@@ -50,7 +50,7 @@ docker-compose up
 2. PID limits: Tune container pids limit. Ex: `--pid="100"`
 3. IPC Mode: Inter process communication mode. Set it to `private` when possible. Ex: `--ipc="private"` 
 4. Use `127.0.0.1` if possible for the docker host name instead of `0.0.0.0`.
-5. Disable container processes from gaining more privileges. Ex: `--security-opt="apparmor=PROFILE"` 
+5. Disable container processes from gaining more privileges. Ex: `--security-opt="no-new-privileges"` 
 
 ## References
 ```buildoutcfg
