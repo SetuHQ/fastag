@@ -15,6 +15,5 @@ services:
       - LOG_IN_FILE=nope
       # Axis config
       - END_POINT=<axis-endpoint>
-    command: /app/server
     ports:
       - 3000:3000
